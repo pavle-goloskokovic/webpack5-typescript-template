@@ -2,10 +2,36 @@
     "name": "webpack5-typescript-template",
     "version": "0.1.0",
     "description": "Webpack5 Typescript template",
-    "main": "index.js",
+    "main": "src/ts/index.ts",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "start": "webpack-dev-server",
+        "build:dev": "webpack",
+        "build:prod": "webpack --config webpack.config.prod.ts",
+        "eslint": "eslint **/*.ts",
+        "eslint:fix": "eslint --fix **/*.ts"
     },
-    "author": "",
-    "license": "MIT"
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/pavle-goloskokovic/webpack5-typescript-template.git"
+    },
+    "keywords": [
+        "type",
+        "script",
+        "typescript",
+        "javascript",
+        "ejs",
+        "css",
+        "boilerplate",
+        "template",
+        "development",
+        "javascript",
+        "webpack",
+        "webpack5"
+    ],
+    "author": "Pavle Goloskoković",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/pavle-goloskokovic/webpack5-typescript-template/issues"
+    },
+    "homepage": "https://github.com/pavle-goloskokovic/webpack5-typescript-template#readme"
 }
