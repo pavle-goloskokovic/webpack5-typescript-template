@@ -2,6 +2,7 @@ import { resolve } from 'path';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import type autoprefixer from 'autoprefixer';
 
 import pkg from './package.json';
 
@@ -87,7 +88,19 @@ export default <webpack.Configuration>{
                 test: /\.css$/i,
                 use: [
                     prod ? MiniCssExtractPlugin.loader : 'style-loader',
-                    'css-loader'
+                    'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: { postcssOptions: { plugins: [[
+                            'autoprefixer',
+                            <autoprefixer.Options> {
+                                // Options
+                                overrideBrowserslist: [
+                                    '>0.2%, last 4 versions'
+                                ]
+                            }
+                        ]] } }
+                    }
                 ]
             },
             /**
