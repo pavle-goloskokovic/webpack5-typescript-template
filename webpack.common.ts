@@ -121,6 +121,7 @@ export default <webpack.Configuration>{
                 banner: `\n${banner.replace('\n', '\n   ')}\n`,
                 title: `${pkg.description} v${pkg.version}`
             },
+            inject: 'body',
             minify: prod ? htmlminOptions : 'auto'
         }),
         new MiniCssExtractPlugin({
